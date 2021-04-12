@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 21:20:22 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/02 20:33:32 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/12 23:45:23 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int					ft_isspace(int c);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putnbr(int n);
+int					ft_error(char *err);
 
 char				*ft_strncat
 					(char *restrict s1, const char *restrict s2, size_t n);
