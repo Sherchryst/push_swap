@@ -10,7 +10,7 @@ _Purple=\033[1;35m
 BWhite="\[\033[1;37m\]"       # White
 
 # DIRECTORIES
-BUILD	= ./build
+BUILD	= ./.build
 
 SRC_DIR	= ./src/
 
@@ -21,7 +21,7 @@ LIBFT	= ./libft/libft.a
 SRC		= checker_main.c \
 		  parser.c \
 		  print_stacks.c \
-		  print_titles.c \
+		  print_games.c \
 		  stack_tools.c \
 		  free_tools.c
 
