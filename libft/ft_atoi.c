@@ -6,37 +6,35 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 21:18:26 by sgah              #+#    #+#             */
-/*   Updated: 2021/03/25 12:22:16 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/14 11:48:49 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+long long int	ft_atoi(const char *str)
 {
-	int i;
-	int res;
-	int s;
+	long long unsigned int	i;
+	long long unsigned int	r;
+	int						s;
+	long long unsigned int	t;
 
-	i = 0;
+	r = 0;
 	s = 1;
-	res = 0;
-	while (ft_isspace(str[i]) && str[i])
-	{
+	i = 0;
+	while (str[i] && ft_isspace(str[i]))
 		i++;
-	}
 	if (str[i] == '-')
-	{
 		s = -1;
-		i++;
-	}
-	else if (str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i] && ft_isdigit(str[i]))
 	{
-		res = res * 10 + (str[i] - 48);
+		t = str[i] - '0';
+		r = r * 10 + t;
 		i++;
 	}
-	res = res * s;
-	return (res);
+	if (r > 9223372036854775807)
+		return (s == 1 ? -1 : 0);
+	return (r * s);
 }

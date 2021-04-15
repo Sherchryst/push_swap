@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 21:20:22 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/12 23:45:23 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/14 11:49:25 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 
 void				ft_tabmap(char **tb, void (*f)(const char *));
 
-int					ft_atoi(const char *str);
+long long int		ft_atoi(const char *str);
 
 int					ft_isdigit(int c);
 int					ft_isascii(int c);

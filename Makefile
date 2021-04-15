@@ -19,7 +19,11 @@ NAME	= checker
 LIBFT	= ./libft/libft.a
 
 SRC		= checker_main.c \
-		  parser.c
+		  parser.c \
+		  print_stacks.c \
+		  print_titles.c \
+		  stack_tools.c \
+		  free_tools.c
 
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 
