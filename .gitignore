@@ -1,0 +1,4 @@
+checker
+.build
+libft/.build
+libft/libft.a
