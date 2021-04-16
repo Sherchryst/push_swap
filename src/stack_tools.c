@@ -6,15 +6,12 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:31:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/15 15:30:09 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 11:35:41 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-***This function init the roots
-*/
 t_stack
 	*roots_stack(void)
 {
@@ -29,9 +26,6 @@ t_stack
 	return (new);
 }
 
-/*
-***This function create the the first element of the stack
-*/
 t_stack
 	*first_elem(int n, t_stack *roots)
 {
@@ -48,9 +42,6 @@ t_stack
 	return (new);
 }
 
-/*
-***This function add back new element to the stack
-*/
 t_stack
 	*new_elem_add_back(int n, t_stack *elem)
 {
@@ -84,5 +75,3 @@ t_stack
 		print_game_start(roots, NULL);
 	return (roots);
 }
-
-

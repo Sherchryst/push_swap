@@ -6,70 +6,53 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:18:05 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/15 15:26:03 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 12:03:38 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int
-	ft_isint(int ac, char **av, int v)
+int
+	parse(int ac, char **av, int v)
 {
 	long long int	l;
 	int				i;
 	int				j;
+	int				k;
 
-	if (v == 1)
-		i = 2;
-	else
-		i = 1;
-	while (i < ac)
+	i = ((v == 1) ? 2 : 1) - 1;
+	while (++i < ac)
 	{
 		l = ft_atoi(av[i]);
 		if (l < -2147483648 || l > 2147483647)
 			return (1);
-		j = 0;
-		while (av[i][j] != '\0')
-		{
+		j = -1;
+		while (av[i][++j] != '\0')
 			if (ft_isdigit(av[i][j]) == 0 && av[i][j] != '-')
 				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-static int
-	check_duplicate(int ac, char **av, int v)
-{
-	int	i;
-	int	j;
-
-	if (v == 1)
-		i = 2;
-	else
-		i = 1;
-	while (i < ac)
-	{
-		j = i + 1;
-		while (j < ac)
-		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+		k = i;
+		while (++k < ac)
+			if (ft_atoi(av[i]) == ft_atoi(av[k]))
 				return (1);
-			j++;
-		}
-		i++;
 	}
 	return (0);
 }
 
 int
-	parse(int ac, char **av, int v)
+	parse_cmd(char *cmd)
 {
-	if (ft_isint(ac, av, v))
+	if (ft_strcmp(cmd, "sa") != 0
+			&& ft_strcmp(cmd, "sb") != 0
+			&& ft_strcmp(cmd, "ss") != 0
+			&& ft_strcmp(cmd, "pa") != 0
+			&& ft_strcmp(cmd, "pb") != 0
+			&& ft_strcmp(cmd, "ra") != 0
+			&& ft_strcmp(cmd, "rb") != 0
+			&& ft_strcmp(cmd, "rr") != 0
+			&& ft_strcmp(cmd, "rra") != 0
+			&& ft_strcmp(cmd, "rrb") != 0
+			&& ft_strcmp(cmd, "rrr") != 0)
 		return (1);
-	if (check_duplicate(ac, av, v))
-		return (1);
-	return (0);
+	else
+		return (0);
 }

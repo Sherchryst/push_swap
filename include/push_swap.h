@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:01:54 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/15 15:42:46 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 11:45:43 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 ***PARSER
 */
 int			parse(int ac, char **a, int v);
+int			parse_cmd(char *cmd);
 
 /*
 ***STACK_TOOLS
@@ -43,6 +44,6 @@ void		print_stacks(t_stack *a, t_stack *b);
 /*
 ***FREE_TOOLS
 */
-void		free_all(t_stack *a);
+int			free_all(char *cmd, t_stack *a);
 
 #endif

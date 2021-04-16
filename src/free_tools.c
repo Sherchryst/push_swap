@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:32:03 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/15 15:41:37 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 11:46:44 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ static void
 	*roots = NULL;
 }
 
-void
-	free_all(t_stack *a)
+int
+	free_all(char *cmd, t_stack *a)
 {
+	free(cmd);
 	free_all_stack(&a);
+	return (1);
 }
