@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:31:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 11:35:41 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 16:00:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,5 @@ t_stack
 	first = first_elem(((v == 1) ? ft_atoi(av[2]) : ft_atoi(av[1])), roots);
 	while (++i < ac)
 		new = new_elem_add_back(ft_atoi(av[i]), roots);
-	if (v == 1)
-		print_game_start(roots, NULL);
 	return (roots);
 }

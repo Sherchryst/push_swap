@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:04:23 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/15 15:23:20 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 16:50:05 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void
 	t_stack	*btmp;
 
 	atmp = a->next;
-	btmp = (b != NULL) ? b->next : NULL;
-	while (atmp != a || (btmp != NULL && btmp != b))
+	btmp = b->next;
+	while (atmp != a || btmp != b)
 	{
 		if (atmp != a)
 		{
@@ -29,7 +29,7 @@ void
 		}
 		else
 			printf("           \t");
-		if (btmp != NULL && btmp != b)
+		if (btmp != b)
 		{
 			printf("%11d\n", btmp->n);
 			btmp = btmp->next;

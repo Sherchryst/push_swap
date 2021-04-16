@@ -5,27 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 14:22:49 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 14:54:59 by sgah             ###   ########.fr       */
+/*   Created: 2021/04/16 14:15:45 by sgah              #+#    #+#             */
+/*   Updated: 2021/04/16 15:55:45 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void
-	swap_stack(t_stack **roots)
+static void
+	swap_stacks(t_stack **a, t_stack **b)
 {
-	t_stack *first;
-	t_stack *second;
+	swap_stack(a);
+	swap_stack(b);
+}
 
-	if ((*roots)->next == (*roots) || (*roots)->next->next == *roots)
-		return ;
-	first = (*roots)->next;
-	second = (*roots)->next->next;
-	printf("%d %d\n", first->n, second->n);
-	first->next = second->next;
-	second->next = first;
-	second->prev = first->prev;
-	first->prev = second;
-	(*roots)->next = second;
+void
+	do_cmd(char *cmd, t_stack **a, t_stack **b)
+{
+	if (ft_strcmp(cmd, "sa") == 0)
+		swap_stack(a);
+	else if (ft_strcmp(cmd, "sb") == 0)
+		swap_stack(b);
+	else if (ft_strcmp(cmd, "ss") == 0)
+		swap_stacks(a, b);
+	else if (ft_strcmp(cmd, "pa") == 0)
+		push_stack(b, a);
+	else if (ft_strcmp(cmd, "pb") == 0)
+		push_stack(a, b);
 }

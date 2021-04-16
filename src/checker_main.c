@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 20:15:05 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 14:39:46 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 16:00:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int
 			return (ft_error("Error\n"));
 		a = fill_stack(ac, av, v);
 		b = roots_stack();
+		(v == 1) ? print_game_start(a, b) : 0;
 		while (get_next_line(0, &cmd) != 0)
 		{
 			if (parse_cmd(cmd))
