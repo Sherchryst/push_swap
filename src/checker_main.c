@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 20:15:05 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 13:23:55 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 14:39:46 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int
 		{
 			if (parse_cmd(cmd))
 				return (free_all(cmd, a, b) && ft_error("Error\n"));
-
+			do_cmd(cmd, &a, &b);
+			v == 1 ? print_game_cmd(cmd, a, b) : 0;
 			free(cmd);
 		}
 		free_all(cmd, a, b);

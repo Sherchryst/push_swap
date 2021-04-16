@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:01:54 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 13:01:42 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 14:38:00 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@
 # include <stdint.h>
 
 /*
+***CMD
+*/
+void		do_cmd(char *cmd, t_stack **a, t_stack **b);
+
+/*
+***CMD_TOOLS
+*/
+void		swap_stack(t_stack **roots);
+
+/*
 ***PARSER
 */
 int			parse(int ac, char **a, int v);
@@ -33,9 +43,10 @@ t_stack		*fill_stack(int ac, char **av, int v);
 t_stack		*roots_stack(void);
 
 /*
-***PRINT_TITLES
+***PRINT_GAMES
 */
 void		print_game_start(t_stack *a, t_stack *b);
+void		print_game_cmd(char *cmd, t_stack *a, t_stack *b);
 
 /*
 ***PRINT_STACKS

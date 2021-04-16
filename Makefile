@@ -23,7 +23,9 @@ SRC		= checker_main.c \
 		  print_stacks.c \
 		  print_games.c \
 		  stack_tools.c \
-		  free_tools.c
+		  free_tools.c \
+		  cmd.c \
+		  cmd_tools.c
 
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 
