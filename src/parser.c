@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:18:05 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 12:03:38 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 14:00:19 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int
 			return (1);
 		j = -1;
 		while (av[i][++j] != '\0')
-			if (ft_isdigit(av[i][j]) == 0 && av[i][j] != '-')
+			if (ft_isdigit(av[i][j]) == 0 &&
+				(j == 0) ? (av[i][j] != '-') : (av[i][j] == '-'))
 				return (1);
 		k = i;
 		while (++k < ac)
@@ -41,18 +42,23 @@ int
 int
 	parse_cmd(char *cmd)
 {
-	if (ft_strcmp(cmd, "sa") != 0
-			&& ft_strcmp(cmd, "sb") != 0
-			&& ft_strcmp(cmd, "ss") != 0
-			&& ft_strcmp(cmd, "pa") != 0
-			&& ft_strcmp(cmd, "pb") != 0
-			&& ft_strcmp(cmd, "ra") != 0
-			&& ft_strcmp(cmd, "rb") != 0
-			&& ft_strcmp(cmd, "rr") != 0
-			&& ft_strcmp(cmd, "rra") != 0
-			&& ft_strcmp(cmd, "rrb") != 0
-			&& ft_strcmp(cmd, "rrr") != 0)
-		return (1);
-	else
-		return (0);
+	if (ft_strncmp(cmd, "s", 1) == 0)
+	{
+		if (ft_strcmp(cmd, "sa") == 0 || ft_strcmp(cmd, "sb") == 0 ||
+			ft_strcmp(cmd, "ss") == 0)
+			return (0);
+	}
+	else if (ft_strncmp(cmd, "p", 1) == 0)
+	{
+		if (ft_strcmp(cmd, "pa") == 0 || ft_strcmp(cmd, "pb") == 0)
+			return (0);
+	}
+	else if (ft_strncmp(cmd, "r", 1) == 0)
+	{
+		if (ft_strcmp(cmd, "ra") == 0 || ft_strcmp(cmd, "rb") == 0 ||
+			ft_strcmp(cmd, "rr") == 0 || ft_strcmp(cmd, "rra") == 0 ||
+			ft_strcmp(cmd, "rrb") == 0 || ft_strcmp(cmd, "rrr") == 0)
+			return (0);
+	}
+	return (1);
 }

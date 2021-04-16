@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:32:03 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 11:46:44 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 13:01:42 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ static void
 }
 
 int
-	free_all(char *cmd, t_stack *a)
+	free_all(char *cmd, t_stack *a, t_stack *b)
 {
 	free(cmd);
 	free_all_stack(&a);
+	free_all_stack(&b);
 	return (1);
 }
