@@ -25,7 +25,8 @@ SRC		= checker_main.c \
 		  stack_tools.c \
 		  free_tools.c \
 		  cmd.c \
-		  cmd_tools.c
+		  cmd_tools.c \
+		  cmd_lst_tools.c
 
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 

@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:22:49 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 16:49:30 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 18:04:16 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,20 @@ void
 
 	if ((*src)->next == *src)
 		return ;
-	first_src = (*src)->next;
-	first_src->prev->next = first_src->next;
-	first_src->next->prev = first_src->prev;
-	first_src->prev = (*dest);
-	first_src->next = (*dest)->next;
-	(*dest)->next->prev = first_src;
-	(*dest)->next = first_src;
+	first_src = release((*src)->next);
+	add_after(*dest, first_src);
+}
+
+void
+	rotate_stack(t_stack **roots)
+{
+	t_stack	*last;
+	t_stack	*first;
+
+	if ((*roots)->next == *roots && (*roots)->next->next == *roots)
+		return ;
+	first = release((*roots)->next);
+	last = release((*roots)->prev);
+	add_after(*roots, last);
+	add_before(*roots, first);
 }

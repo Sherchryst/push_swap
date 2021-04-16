@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:15:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 15:55:45 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/16 17:24:13 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,8 @@ void
 		push_stack(b, a);
 	else if (ft_strcmp(cmd, "pb") == 0)
 		push_stack(a, b);
+	else if (ft_strcmp(cmd, "ra") == 0)
+		rotate_stack(a);
+	else if (ft_strcmp(cmd, "rb") == 0)
+		rotate_stack(b);
 }
