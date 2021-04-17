@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:15:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 02:28:08 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 13:46:13 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,17 @@ void
 	else if (ft_strcmp(cmd, "rrr") == 0)
 		reverse_rotate_stacks(a, b);
 	v == 1 ? print_game_cmd(cmd, *a, *b) : 0;
+}
+
+void
+	to_do_cmd(char *cmd, t_stack **a, t_stack **b, int time)
+{
+	int	i;
+
+	i = -1;
+	while (++i < time)
+	{
+		do_cmd(cmd, a, b, 0);
+		printf("%s\n", cmd);
+	}
 }

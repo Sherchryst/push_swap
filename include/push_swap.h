@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:01:54 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 02:29:35 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 15:37:29 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 ***CMD_TOOLS
 */
 void		do_cmd(char *cmd, t_stack **a, t_stack **b, int v);
+void		to_do_cmd(char *cmd, t_stack **a, t_stack **b, int time);
 
 /*
 ***CMD
@@ -65,6 +66,18 @@ void		print_ko(void);
 ***PRINT_STACKS
 */
 void		print_stacks(t_stack *a, t_stack *b);
+
+/*
+***SORTING
+*/
+void		push_swap_short_sort(t_stack **a, t_stack **b, int size);
+
+/*
+***SORTING_TOOLS
+*/
+int			get_max_n(t_stack *roots);
+int			get_min_n(t_stack *roots);
+t_stack		*get_last_elem(t_stack *roots);
 
 /*
 ***FREE_TOOLS
