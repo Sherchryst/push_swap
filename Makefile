@@ -57,7 +57,7 @@ CFLAGS	= -Wall -Werror -Wextra -Ofast -fno-builtin
 DFLAGS	= -MP -MMD
 INC		= -I./include
 
-$(NAME1): $(LIBFT) $(OBJ) $(OBJM1) $(NAME2)
+$(NAME1): $(OBJM1)
 	@$(CC) $(INC) $(OBJ) $(OBJM1) $(LIBFT) -o $(NAME1)
 	@echo ""
 	@echo "${_GREEN}The executable file of ${Color_Off}${_Purple}"
@@ -86,7 +86,7 @@ $(NAME2): $(OBJM2)
 $(LIBFT):
 	@make bonus -C ./libft
 
-all: $(NAME1)
+all: $(LIBFT) $(OBJ) $(NAME1) $(NAME2)
 
 clean:
 	@rm -rf $(BUILD)
