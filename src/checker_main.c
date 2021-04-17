@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 20:15:05 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 01:54:36 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 02:29:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,15 @@ static int
 		next = next->next;
 	}
 	return (1);
-
 }
 
 static void
-	checker(t_stack *a, t_stack *b)
+	checker(t_stack *a, t_stack *b, int v)
 {
 	if (b->next == b && check_is_sorted(a))
-		print_ok();
+		v == 1 ? print_ok() : printf("OK\n");
 	else
-		print_ko();
+		v == 1 ? print_ko() : printf("KO\n");
 }
 
 int
@@ -62,7 +61,7 @@ int
 			do_cmd(cmd, &a, &b, v);
 			free(cmd);
 		}
-		checker(a, b);
+		checker(a, b, v);
 		free_all(cmd, a, b);
 		v == 1 ? print_game_end() : 0;
 	}

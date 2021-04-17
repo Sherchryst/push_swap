@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:22:49 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 02:20:42 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 02:27:51 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void
 }
 
 void
-	push_stack(t_stack **src,t_stack **dest)
+	push_stack(t_stack **src, t_stack **dest)
 {
 	t_stack	*first_src;
 

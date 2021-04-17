@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:01:54 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 01:54:36 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 02:29:35 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		do_cmd(char *cmd, t_stack **a, t_stack **b, int v);
 ***CMD
 */
 void		swap_stack(t_stack **roots);
-void		push_stack(t_stack **src,t_stack **dest);
+void		push_stack(t_stack **src, t_stack **dest);
 void		rotate_stack(t_stack **roots);
 void		reverse_rotate_stack(t_stack **roots);
 
