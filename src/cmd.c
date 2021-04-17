@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:22:49 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 00:53:17 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 02:20:42 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,13 @@
 void
 	swap_stack(t_stack **roots)
 {
-	t_stack *first;
 	t_stack *second;
 
 	if ((*roots)->next == (*roots) ||
 		(*roots)->next->next == *roots)
 		return ;
-	first = (*roots)->next;
-	second = (*roots)->next->next;
-	first->next = second->next;
-	second->next = first;
-	second->prev = first->prev;
-	first->prev = second;
-	(*roots)->next = second;
+	second = release((*roots)->next->next);
+	add_after(*roots, second);
 }
 
 void
