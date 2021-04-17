@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:15:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 17:24:13 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 02:04:29 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,22 @@ static void
 	swap_stack(b);
 }
 
+static void
+	rotate_stacks(t_stack **a, t_stack **b)
+{
+	rotate_stack(a);
+	rotate_stack(b);
+}
+
+static void
+	reverse_rotate_stacks(t_stack **a, t_stack **b)
+{
+	reverse_rotate_stack(a);
+	reverse_rotate_stack(b);
+}
+
 void
-	do_cmd(char *cmd, t_stack **a, t_stack **b)
+	do_cmd(char *cmd, t_stack **a, t_stack **b, int v)
 {
 	if (ft_strcmp(cmd, "sa") == 0)
 		swap_stack(a);
@@ -36,4 +50,13 @@ void
 		rotate_stack(a);
 	else if (ft_strcmp(cmd, "rb") == 0)
 		rotate_stack(b);
+	else if (ft_strcmp(cmd, "rr") == 0)
+		rotate_stacks(a, b);
+		else if (ft_strcmp(cmd, "rra") == 0)
+		reverse_rotate_stack(a);
+	else if (ft_strcmp(cmd, "rrb") == 0)
+		reverse_rotate_stack(b);
+	else if (ft_strcmp(cmd, "rrr") == 0)
+		reverse_rotate_stacks(a, b);
+	v == 1 ? print_game_cmd(cmd, *a, *b) : 0;
 }

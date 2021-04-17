@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:22:49 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 18:04:16 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 00:53:17 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,21 @@ void
 void
 	rotate_stack(t_stack **roots)
 {
-	t_stack	*last;
 	t_stack	*first;
 
 	if ((*roots)->next == *roots && (*roots)->next->next == *roots)
 		return ;
 	first = release((*roots)->next);
+	add_before(*roots, first);
+}
+
+void
+	reverse_rotate_stack(t_stack **roots)
+{
+	t_stack	*last;
+
+	if ((*roots)->next == *roots && (*roots)->next->next == *roots)
+		return ;
 	last = release((*roots)->prev);
 	add_after(*roots, last);
-	add_before(*roots, first);
 }

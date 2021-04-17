@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:01:54 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 18:02:54 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 01:54:36 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 /*
 ***CMD_TOOLS
 */
-void		do_cmd(char *cmd, t_stack **a, t_stack **b);
+void		do_cmd(char *cmd, t_stack **a, t_stack **b, int v);
 
 /*
 ***CMD
@@ -31,6 +31,7 @@ void		do_cmd(char *cmd, t_stack **a, t_stack **b);
 void		swap_stack(t_stack **roots);
 void		push_stack(t_stack **src,t_stack **dest);
 void		rotate_stack(t_stack **roots);
+void		reverse_rotate_stack(t_stack **roots);
 
 /*
 ***CMD_LST_TOOLS
@@ -56,6 +57,9 @@ t_stack		*roots_stack(void);
 */
 void		print_game_start(t_stack *a, t_stack *b);
 void		print_game_cmd(char *cmd, t_stack *a, t_stack *b);
+void		print_game_end(void);
+void		print_ok(void);
+void		print_ko(void);
 
 /*
 ***PRINT_STACKS

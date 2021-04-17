@@ -6,11 +6,38 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 20:15:05 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 16:00:59 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 01:54:36 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int
+	check_is_sorted(t_stack *a)
+{
+	t_stack	*next;
+
+	next = a->next;
+	if (next == a || next->next == a)
+		return (1);
+	while (next != a && next->next != a)
+	{
+		if (next->n > next->next->n)
+			return (0);
+		next = next->next;
+	}
+	return (1);
+
+}
+
+static void
+	checker(t_stack *a, t_stack *b)
+{
+	if (b->next == b && check_is_sorted(a))
+		print_ok();
+	else
+		print_ko();
+}
 
 int
 	main(int ac, char **av)
@@ -32,11 +59,12 @@ int
 		{
 			if (parse_cmd(cmd))
 				return (free_all(cmd, a, b) && ft_error("Error\n"));
-			do_cmd(cmd, &a, &b);
-			v == 1 ? print_game_cmd(cmd, a, b) : 0;
+			do_cmd(cmd, &a, &b, v);
 			free(cmd);
 		}
+		checker(a, b);
 		free_all(cmd, a, b);
+		v == 1 ? print_game_end() : 0;
 	}
 	return (0);
 }
