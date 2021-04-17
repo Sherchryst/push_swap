@@ -6,13 +6,13 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 11:47:19 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 16:09:06 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 16:28:05 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void
+static void
 	push_swap_sort_4_5_loop(t_stack **a, t_stack **b)
 {
 	if ((*b)->next->n < get_min_n(*a) || (*b)->next->n > get_max_n(*a))
@@ -34,7 +34,7 @@ void
 	}
 }
 
-void
+static void
 	push_swap_sort_4_5(t_stack **a, t_stack **b, int size)
 {
 	while (size - 3 > 0)
@@ -46,7 +46,7 @@ void
 		to_do_cmd("ra", a, b, 1);
 }
 
-void
+static void
 	push_swap_sort_3(t_stack **a, t_stack **b)
 {
 	(*a)->next = (*a)->next;

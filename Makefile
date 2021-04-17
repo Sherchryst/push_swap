@@ -44,7 +44,13 @@ SRC		= parser.c \
 		  cmd_tools.c \
 		  cmd_lst_tools.c \
 		  short_sorting.c \
-		  sorting_tools.c
+		  sorting_tools.c \
+		  quicksort.c \
+		  sorting_tools2.c \
+		  sorting_tools3.c \
+		  sorting_tools4.c \
+		  sorting.c \
+		  tools.c
 
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 
@@ -57,7 +63,7 @@ CFLAGS	= -Wall -Werror -Wextra -Ofast -fno-builtin
 DFLAGS	= -MP -MMD
 INC		= -I./include
 
-$(NAME1): $(OBJM1)
+$(NAME1): $(LIBFT) $(OBJ) $(OBJM1)
 	@$(CC) $(INC) $(OBJ) $(OBJM1) $(LIBFT) -o $(NAME1)
 	@echo ""
 	@echo "${_GREEN}The executable file of ${Color_Off}${_Purple}"
@@ -68,7 +74,7 @@ $(NAME1): $(OBJM1)
 	@echo " ██████ ██   ██ ███████  ██████ ██   ██ ███████ ██   ██ ${Color_Off}"
 	@echo "                                                     ${_GREEN}Has been created!${Color_Off}"
 
-$(NAME2): $(OBJM2)
+$(NAME2): $(LIBFT) $(OBJ) $(OBJM2)
 	@$(CC) $(INC) $(OBJ) $(OBJM2) $(LIBFT) -o $(NAME2)
 	@echo ""
 	@echo "${_GREEN}The executable file of ${Color_Off}${BRed}"
@@ -86,7 +92,11 @@ $(NAME2): $(OBJM2)
 $(LIBFT):
 	@make bonus -C ./libft
 
-all: $(LIBFT) $(OBJ) $(NAME1) $(NAME2)
+all: $(NAME1) $(NAME2)
+
+check: $(NAME1)
+
+swap: $(NAME2)
 
 clean:
 	@rm -rf $(BUILD)
@@ -110,4 +120,4 @@ $(BUILD)/%.o: $(SRC_DIR)%.c | $(BUILD)
 
 -include $(DEP)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re check swap

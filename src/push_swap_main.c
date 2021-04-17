@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 11:11:14 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 14:55:12 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 20:59:24 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void
 {
 	if (size <= 5)
 		push_swap_short_sort(a, b, size);
-/*	else
-		push_swap_sort(a, b, size);*/
+	else
+		push_swap_sort(a, b, size);
 }
 
 int

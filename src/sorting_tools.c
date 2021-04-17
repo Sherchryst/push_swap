@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:16:11 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 15:37:07 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 20:18:11 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,39 @@ t_stack
 
 	tmp = roots->prev;
 	return (tmp);
+}
+
+int
+	*lst_to_array(t_stack *roots, int size)
+{
+	int		*array;
+	t_stack	*tmp;
+	int		i;
+
+	tmp = roots->next;
+	array = (int*)malloc(sizeof(int) * size);
+	i = 0;
+	while (tmp != roots)
+	{
+		array[i] = tmp->n;
+		tmp = tmp->next;
+		i++;
+	}
+	return (array);
+}
+
+void
+	fill_mark(t_stack **roots, int *array)
+{
+	int		i;
+	t_stack	*tmp;
+
+	i = 0;
+	tmp = (*roots)->next;
+	while (tmp != *roots)
+	{
+		tmp->k = array[i];
+		tmp = tmp->next;
+		i++;
+	}
 }

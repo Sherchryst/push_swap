@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   typedef.h                                          :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 12:25:28 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 18:56:49 by sgah             ###   ########.fr       */
+/*   Created: 2021/04/17 20:40:46 by sgah              #+#    #+#             */
+/*   Updated: 2021/04/17 20:41:33 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPEDEF_H
-# define TYPEDEF_H
-
-typedef struct			s_stack
+int
+	ft_min(int a, int b)
 {
-	struct s_stack	*prev;
-	int				k;
-	int				i;
-	int				n;
-	struct s_stack	*next;
-}						t_stack;
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
 
-#endif
+int
+	ft_max(int a, int b)
+{
+	if (a < b)
+		return (b);
+	else
+		return (a);
+}

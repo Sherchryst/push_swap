@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:31:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/16 16:00:59 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 20:12:16 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,20 @@ t_stack
 	while (++i < ac)
 		new = new_elem_add_back(ft_atoi(av[i]), roots);
 	return (roots);
+}
+
+int
+	get_size_stack(t_stack *roots)
+{
+	t_stack *tmp;
+	int	i;
+
+	tmp = roots->next;
+	i = 0;
+	while (tmp != roots)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }
