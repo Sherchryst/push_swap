@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:22:49 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 02:27:51 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/17 02:31:28 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void
 {
 	t_stack	*first;
 
-	if ((*roots)->next == *roots && (*roots)->next->next == *roots)
+	if ((*roots)->next == *roots &&
+		(*roots)->next->next == *roots)
 		return ;
 	first = release((*roots)->next);
 	add_before(*roots, first);
@@ -51,7 +52,8 @@ void
 {
 	t_stack	*last;
 
-	if ((*roots)->next == *roots && (*roots)->next->next == *roots)
+	if ((*roots)->next == *roots &&
+		(*roots)->next->next == *roots)
 		return ;
 	last = release((*roots)->prev);
 	add_after(*roots, last);
