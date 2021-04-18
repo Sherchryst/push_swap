@@ -99,7 +99,7 @@ clean:
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	@rm -f $(NAME1) $(NAME2)
+	@rm -f $(NAMES)
 	@make -C ./libft fclean
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning exec\t\033[0;32m[OK]\033[0m"
 
