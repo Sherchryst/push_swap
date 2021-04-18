@@ -67,7 +67,7 @@ INC		= -I./include
 
 $(NAMES): $(LIBFT) $(OBJ) $(OBJM1) $(OBJM2)
 	@$(CC) $(INC) $(OBJ) $(OBJM1) $(LIBFT) -o $(NAME1)
-	@echo ""
+	@echo "\n"
 	@echo "${_GREEN}The executable file of ${Color_Off}${_Purple}"
 	@echo " ██████ ██   ██ ███████  ██████ ██   ██ ███████ ██████  "
 	@echo "██      ██   ██ ██      ██      ██  ██  ██      ██   ██ "
@@ -87,7 +87,7 @@ $(NAMES): $(LIBFT) $(OBJ) $(OBJM1) $(OBJM2)
 	@echo "░▒ ░     ░░▒░ ░ ░ ░ ░▒  ░ ░ ▒ ░▒░ ░   ░ ░▒  ░ ░  ▒ ░ ░    ▒   ▒▒ ░░▒ ░     "
 	@echo "░░        ░░░ ░ ░ ░  ░  ░   ░  ░░ ░   ░  ░  ░    ░   ░    ░   ▒   ░░       "
 	@echo "            ░           ░   ░  ░  ░         ░      ░          ░  ░         ${Color_Off}"
-	@echo "                                                     ${_GREEN}Has been created!${Color_Off}"
+	@echo "                                                       ${_GREEN}Has been created!${Color_Off}"
 
 $(LIBFT):
 	@make bonus -C ./libft
