@@ -32,6 +32,8 @@ MAIN2	= push_swap_main.c
 OBJM2	:= $(MAIN2:%.c=$(BUILD)/%.o)
 
 #SOURCES
+NAMES	= $(NAME1) $(NAME2)
+
 MAINS	= $(addprefix $(SRC_DIR), $(MAIN1)) \
 		  $(addprefix $(SRC_DIR), $(MAIN2))
 
@@ -63,7 +65,7 @@ CFLAGS	= -Wall -Werror -Wextra -Ofast -fno-builtin
 DFLAGS	= -MP -MMD
 INC		= -I./include
 
-$(NAME1): $(LIBFT) $(OBJ) $(OBJM1)
+$(NAMES): $(LIBFT) $(OBJ) $(OBJM1) $(OBJM2)
 	@$(CC) $(INC) $(OBJ) $(OBJM1) $(LIBFT) -o $(NAME1)
 	@echo ""
 	@echo "${_GREEN}The executable file of ${Color_Off}${_Purple}"
@@ -73,8 +75,6 @@ $(NAME1): $(LIBFT) $(OBJ) $(OBJM1)
 	@echo "██      ██   ██ ██      ██      ██  ██  ██      ██   ██ "
 	@echo " ██████ ██   ██ ███████  ██████ ██   ██ ███████ ██   ██ ${Color_Off}"
 	@echo "                                                     ${_GREEN}Has been created!${Color_Off}"
-
-$(NAME2): $(LIBFT) $(OBJ) $(OBJM2)
 	@$(CC) $(INC) $(OBJ) $(OBJM2) $(LIBFT) -o $(NAME2)
 	@echo ""
 	@echo "${_GREEN}The executable file of ${Color_Off}${BRed}"
@@ -92,18 +92,14 @@ $(NAME2): $(LIBFT) $(OBJ) $(OBJM2)
 $(LIBFT):
 	@make bonus -C ./libft
 
-all: $(NAME1) $(NAME2)
-
-check: $(NAME1)
-
-swap: $(NAME2)
+all: $(NAMES)
 
 clean:
 	@rm -rf $(BUILD)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	@rm -f $(NAME1) $(NAME2)
+	@rm -f $(NAMES)
 	@make -C ./libft fclean
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning exec\t\033[0;32m[OK]\033[0m"
 
