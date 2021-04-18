@@ -6,14 +6,12 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:28:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 21:02:02 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/18 03:19:51 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*MAYBE apply n_cmd
-*/
 int
 	need_to_swap(t_stack **a, t_stack **b)
 {
