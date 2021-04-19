@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:31:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 20:12:16 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/19 16:14:15 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ t_stack
 int
 	get_size_stack(t_stack *roots)
 {
-	t_stack *tmp;
-	int	i;
+	t_stack	*tmp;
+	int		i;
 
 	tmp = roots->next;
 	i = 0;

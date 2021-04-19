@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 17:38:00 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/17 20:37:37 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/19 16:15:25 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void
 int
 	get_index(t_stack *roots, int n)
 {
-	int			i;
+	int		i;
 	t_stack	*tmp;
 
 	tmp = roots->next;

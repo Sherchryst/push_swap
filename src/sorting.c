@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:28:45 by sgah              #+#    #+#             */
-/*   Updated: 2021/04/18 03:23:53 by sgah             ###   ########.fr       */
+/*   Updated: 2021/04/19 16:14:15 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void
 	add_markup_opti(a);
 	while (get_markup(*a, 0) != 0)
 	{
-		if(need_to_swap(a, b) == 1)
+		if (need_to_swap(a, b) == 1)
 		{
 			to_do_cmd("sa", a, b, 1);
 			add_markup_opti(a);
@@ -52,7 +52,7 @@ void
 		else
 			to_do_cmd("ra", a, b, 1);
 	}
-	while ( (*b)->next != (*b))
+	while ((*b)->next != (*b))
 		pushback_one(a, b, nb_pushback_opti(*a, *b));
 	align("ra", "rra", a, b);
 	free(array);
